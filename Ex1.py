@@ -24,7 +24,7 @@ def informacoes():
     return jsonify(info), 200, {'Content-Type': 'application/json; chatset=utf-8'}
 
 
-# Ela sobe um servidor local em: http://localhost:5000
+# sobe um servidor local em: http://localhost:5000
 if __name__ == '__main__':
     app.run(debug=True)
 
