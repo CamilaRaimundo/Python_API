@@ -10,9 +10,20 @@ app = Flask(__name__)
 @app.route('/previsao-idade/<string:nome>', methods=['GET'])
 def consomeAPI(nome):
     url = f'https://api.agify.io?name={nome}'
-    response = requests.get(url)
 
-    return response.json() if response.status_code == 200 else None 
+    response = requests.get(url)
+    
+    if response.status_code != 200:
+        return jsonify({"erro": "Erro ao consultar API externa"}), 500
+
+    resposta = response.json()
+
+    pessoa = {
+        'nome': resposta['name'],
+        'idade_prevista': resposta['age']
+    }
+
+    return jsonify(pessoa), 200
 
 
 if __name__ == '__main__':
