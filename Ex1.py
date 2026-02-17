@@ -27,24 +27,3 @@ def informacoes():
 # sobe um servidor local em: http://localhost:5000
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# -----------------------------------------------------------------------------------------------
-# 🔵 GET
-
-#     Usado para buscar dados
-#     Não deve alterar nada no servidor
-#     Parâmetros vão na URL
-#         Exemplo:
-#             GET /api/parametro?nome=Camila
-
-# 🔴 POST
-
-#     Usado para enviar dados
-#     Pode criar ou modificar recursos
-#     Dados vão no corpo (body)
-#         Exemplo:
-#             POST /api/payload
-#             {
-#             "nome": "Camila"
-#             }
